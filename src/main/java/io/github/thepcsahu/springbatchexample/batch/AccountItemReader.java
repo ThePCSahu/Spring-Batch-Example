@@ -22,6 +22,9 @@ public class AccountItemReader implements ItemReader<AccountEntity> {
 
 	private Iterator<AccountEntity> accountsIterator;
 
+	/*
+	 * Read multiple records at once from input source
+	 */
 	@BeforeStep
 	public void beforeStep(StepExecution stepExecution) {
 		List<AccountEntity> list = respository.findAll();

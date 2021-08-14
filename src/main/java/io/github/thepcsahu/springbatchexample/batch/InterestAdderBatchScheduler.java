@@ -33,6 +33,9 @@ public class InterestAdderBatchScheduler {
 	@Value("${interest-adder-batch.batch-enabled}")
 	private boolean enableBatch;
 
+	/*
+	 * Entry point for batch job
+	 */
 	@Scheduled(fixedDelayString = "${interest-adder-batch.delay}")
 	public void executeBatch() {
 		if (enableBatch) {

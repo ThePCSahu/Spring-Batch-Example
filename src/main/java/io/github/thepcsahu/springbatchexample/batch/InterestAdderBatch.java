@@ -33,7 +33,7 @@ public class InterestAdderBatch {
 
 	@Autowired
 	private MyTestTasklet myTasklet;
-	
+
 	@Autowired
 	private TaskExecutor taskExecutor;
 
@@ -65,6 +65,7 @@ public class InterestAdderBatch {
 
 	@Bean
 	protected Flow flow3(@Qualifier("flow1") Flow flow1, @Qualifier("flow2") Flow flow2, TaskExecutor taskExecutor) {
+		// Divide the job into two parts which can run parallely
 		return (Flow) new FlowBuilder<>("flowbuilder").split(taskExecutor).add(flow1, flow2).build();
 	}
 

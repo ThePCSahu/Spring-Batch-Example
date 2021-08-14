@@ -16,6 +16,10 @@ public class AccountItemWriter implements ItemWriter<AccountEntity> {
 
 	@Autowired
 	private AccountRepository respository;
+	
+	/*
+	 * Save a chunk of items to output destination based on chunk size
+	 */
 
 	@Override
 	public void write(List<? extends AccountEntity> list) throws Exception {

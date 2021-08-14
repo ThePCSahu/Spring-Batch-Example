@@ -14,6 +14,9 @@ public class AccountItemProcessor implements ItemProcessor<AccountEntity, Accoun
 	@Value("${interest-adder-batch.interest-rate}")
 	private int interestRate;
 
+	/*
+	 * Process items one by one
+	 */
 	@Override
 	public AccountEntity process(AccountEntity account) {
 		log.fine("Processing :" + account);
